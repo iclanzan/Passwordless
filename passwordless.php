@@ -400,8 +400,7 @@ class Passwordless extends Skeleton {
 			return;
 
 		$expired = $wpdb->get_col( $wpdb->prepare(
-			"SELECT `option_name` FROM %s WHERE `option_name` LIKE %s AND option_value < %d",
-			$wpdb->users,
+			"SELECT `option_name` FROM $wpdb->options WHERE `option_name` LIKE %s AND `option_value` < %d",
 			'_transient_timeout_login_hash_%',
 			time()
 		) );
@@ -417,7 +416,7 @@ class Passwordless extends Skeleton {
 	 *
 	 * @return boolean Returns TRUE if the requested page is the login page, FALSE otherwise.
 	 */
-	protected function is_login() {
+	public function is_login() {
 		if ( !isset( $this->is_login ) ) {
 			$login_uri = home_url( $this->login_page, 'relative' );
 			$request_uri = $_SERVER['REQUEST_URI'];
