@@ -1,7 +1,7 @@
 Passwordless
 ============
 
-Passwordless allows users to sign up and log in using only email addresses, removing the need for them to remember yet another password.
+Passwordless allows users to sign up and log in using only email addresses, removing the need for them to remember yet another password. It is based on ideas published by Ben Brown [here](http://notes.xoxco.com/post/27999787765/is-it-time-for-password-less-login).
 
 I have created this plugin because it is of great use to me and I hope it will be of use to others but it might break things. Please use it with caution and at your own risk. If you find bugs please get in touch with me or better yet help fix it on [GitHub](https://github.com/iclanzan/Passwordless "Passwordless on GitHub").
 
