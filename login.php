@@ -7,6 +7,7 @@
 
 	wp_admin_css( 'wp-admin', true );
 	wp_admin_css( 'colors-fresh', true );
+	wp_admin_css( 'login', true );
 
 	// Don't index any of these forms
 	add_action( 'login_head', 'wp_no_robots' );
@@ -47,7 +48,7 @@
 
 	?>
 	</head>
-	<body class="login<?php if ( wp_is_mobile() ) echo ' mobile'; ?>">
+	<body class="wp-core-ui login<?php if ( wp_is_mobile() ) echo ' mobile'; ?>">
 		<div id="login">
 			<h1><a href="<?php echo esc_url( $login_header_url ); ?>" title="<?php echo esc_attr( $login_header_title ); ?>"><?php bloginfo( 'name' ); ?></a></h1>
 	<?php
@@ -85,7 +86,7 @@
 				</p>
 				<?php do_action('login_form'); ?>
 				<p class="submit">
-					<input type="submit" name="wp-submit" id="wp-submit" class="button-primary" value="<?php esc_attr_e('Log In'); ?>" />
+					<input type="submit" name="wp-submit" id="wp-submit" class="button button-primary button-large" value="<?php esc_attr_e('Log In'); ?>" />
 					<input type="hidden" name="redirect_to" value="<?php echo esc_attr($redirect_to); ?>" />
 					<input type="hidden" name="testcookie" value="1" />
 					<?php wp_nonce_field( 'passwordless_login_request', 'nonce', false ) ?>
